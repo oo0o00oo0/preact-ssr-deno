@@ -1,4 +1,4 @@
-// ../../../../Users/dsgnr/AppData/Local/deno/npm/registry.npmjs.org/preact/10.26.9/dist/preact.module.js
+// ../../../Users/dsgnr/AppData/Local/deno/npm/registry.npmjs.org/preact/10.26.9/dist/preact.module.js
 var n;
 var l;
 var u;
@@ -287,7 +287,7 @@ n = v.slice, l = {
   return n2.__v.__b - l3.__v.__b;
 }, $.__r = 0, f = /(PointerCapture)$|Capture$/i, c = 0, s = F(false), a = F(true), h = 0;
 
-// ../../../../Users/dsgnr/AppData/Local/deno/npm/registry.npmjs.org/preact/10.26.9/jsx-runtime/dist/jsxRuntime.module.js
+// ../../../Users/dsgnr/AppData/Local/deno/npm/registry.npmjs.org/preact/10.26.9/jsx-runtime/dist/jsxRuntime.module.js
 var f2 = 0;
 var i2 = Array.isArray;
 function u2(e3, t3, n2, o3, i4, u4) {
@@ -315,7 +315,7 @@ function u2(e3, t3, n2, o3, i4, u4) {
   return l.vnode && l.vnode(l3), l3;
 }
 
-// ../../../../Users/dsgnr/AppData/Local/deno/npm/registry.npmjs.org/preact/10.26.9/hooks/dist/hooks.module.js
+// ../../../Users/dsgnr/AppData/Local/deno/npm/registry.npmjs.org/preact/10.26.9/hooks/dist/hooks.module.js
 var t2;
 var r2;
 var u3;
@@ -454,7 +454,7 @@ function D2(n2, t3) {
   return "function" == typeof t3 ? t3(n2) : t3;
 }
 
-// ../../../../Users/dsgnr/AppData/Local/deno/npm/registry.npmjs.org/zustand/4.5.5/esm/vanilla.mjs
+// ../../../Users/dsgnr/AppData/Local/deno/npm/registry.npmjs.org/zustand/4.5.5/esm/vanilla.mjs
 var createStoreImpl = (createState) => {
   let state;
   const listeners = /* @__PURE__ */ new Set();
