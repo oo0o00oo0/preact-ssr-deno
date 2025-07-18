@@ -1,25 +1,30 @@
-/** @jsx h */
-/** @jsxFrag Fragment */
 import { renderToString } from "preact-render-to-string";
 import { Hono } from "@hono/hono";
-import { getDirectoryContents } from "./server/files/utils.ts";
-import { open } from "https://deno.land/x/open/index.ts";
+import {
+  checkInitialFiles,
+  getDirectoryContents,
+} from "./server/files/utils.ts";
+import { open } from "open";
 import { Layout } from "./components/Layout.tsx";
 import { App } from "./components/App.tsx";
+import { join } from "@std/path/join";
+import { getCurrentDir } from "./server/internal.ts";
 
 const app = new Hono();
 
 // Server state
 let counter = 0;
+let status: string[] = [];
 
 // Serve pre-bundled client code
-app.get("/client.js", async (c) => {
+app.get("/client.js", async () => {
   try {
     const bundledCode = await Deno.readTextFile(
       import.meta.dirname + "/client/bundle.js",
     );
 
-    const isDev = Deno.env.get("DENO_ENV") === "development";
+    const isDev = !Deno.mainModule.includes("deno-compile");
+
     const cacheHeaders: Record<string, string> = {
       "Content-Type": "application/javascript",
       "Cache-Control": isDev
@@ -41,6 +46,18 @@ app.get("/client.js", async (c) => {
       },
     );
   }
+});
+
+app.get("/api/status", (c) => {
+  return c.json({ status: status });
+});
+
+app.post("/api/writeFile", async (c) => {
+  const { filename, content } = await c.req.json();
+  const path = join(getCurrentDir(), filename);
+  console.log("path", path);
+  await Deno.writeTextFile(path, content);
+  return c.json({ success: true });
 });
 
 // API endpoints for counter
@@ -67,6 +84,12 @@ app.post("/api/counter/reset", (c) => {
 app.get("/", async (c) => {
   const { files } = getDirectoryContents();
 
+  const fileStatus = checkInitialFiles(files);
+
+  status = fileStatus;
+  const isDev = !Deno.mainModule.includes("deno-compile");
+  const timestamp = isDev ? `?t=${Date.now()}` : "";
+
   // Read styles
   const css = await Deno.readTextFile(
     import.meta.dirname + "/client/styles.css",
@@ -83,16 +106,12 @@ app.get("/", async (c) => {
       script={`
       // Inject initial state for hydration
       window.__INITIAL_DATA__ = ${JSON.stringify(initialState)};
-      
-      // Load the bundled client code
-      import('./client.js');
     `}
+      bundleUrl={`/client.js${timestamp}`}
     >
       {appContent}
     </Layout>,
   );
-
-  console.log(files);
 
   return c.html(`<!DOCTYPE html>${html}`);
 });

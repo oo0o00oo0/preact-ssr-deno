@@ -1,10 +1,12 @@
 interface LayoutProps {
   css: string;
   script: string;
+  bundleUrl: string;
   children: any;
 }
 
-export function Layout({ css, script, children }: LayoutProps) {
+export function Layout({ css, script, bundleUrl, children }: LayoutProps) {
+  console.log("Layout");
   return (
     <html lang="en">
       <head>
@@ -12,23 +14,11 @@ export function Layout({ css, script, children }: LayoutProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>✨</title>
         <style dangerouslySetInnerHTML={{ __html: css }} />
-        <script
-          type="importmap"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              imports: {
-                "preact": "https://esm.sh/preact@10.26.6",
-                "preact/hooks": "https://esm.sh/preact@10.26.6/hooks",
-                "preact/jsx-runtime":
-                  "https://esm.sh/preact@10.26.6/jsx-runtime",
-              },
-            }),
-          }}
-        />
       </head>
       <body>
         <div id="app">{children}</div>
-        <script type="module" dangerouslySetInnerHTML={{ __html: script }} />
+        <script dangerouslySetInnerHTML={{ __html: script }} />
+        <script src={bundleUrl}></script>
       </body>
     </html>
   );

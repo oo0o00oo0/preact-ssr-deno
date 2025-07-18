@@ -1,4 +1,4 @@
-import { useEffect, useState } from "preact/hooks";
+import { useState } from "preact/hooks";
 
 interface CounterProps {
   initialCounter: number;
@@ -19,6 +19,7 @@ export function Counter({ initialCounter }: CounterProps) {
 
   // Make API call and handle response
   const apiCall = async (endpoint: string, method = "GET") => {
+    console.log("apiCall", endpoint, method);
     try {
       setStatus("Updating...");
 
@@ -42,27 +43,6 @@ export function Counter({ initialCounter }: CounterProps) {
     }
   };
 
-  // Periodically sync with server (every 5 seconds)
-  useEffect(() => {
-    const interval = setInterval(async () => {
-      try {
-        const response = await fetch("/api/counter");
-        if (response.ok) {
-          const data = await response.json();
-          // Only update if the value changed (to avoid overwriting during user interaction)
-          if (data.counter !== counter) {
-            setCounter(data.counter);
-          }
-        }
-      } catch (error) {
-        // Silent fail for background sync
-        console.log("Background sync failed:", error);
-      }
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [counter]);
-
   return (
     <div class="counter-section">
       <h2>Server State Counter</h2>
@@ -72,19 +52,28 @@ export function Counter({ initialCounter }: CounterProps) {
       <div class="counter-controls">
         <button
           type="button"
-          onClick={() => apiCall("/increment", "POST")}
+          onClick={() => {
+            console.log("Increment button clicked!");
+            apiCall("/increment", "POST");
+          }}
         >
           +
         </button>
         <button
           type="button"
-          onClick={() => apiCall("/decrement", "POST")}
+          onClick={() => {
+            console.log("Decrement button clicked!");
+            apiCall("/decrement", "POST");
+          }}
         >
-          ---
+          -
         </button>
         <button
           type="button"
-          onClick={() => apiCall("/reset", "POST")}
+          onClick={() => {
+            console.log("Reset button clicked!");
+            apiCall("/reset", "POST");
+          }}
         >
           Reset
         </button>
