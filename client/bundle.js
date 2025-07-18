@@ -1,1 +1,779 @@
-(()=>{var R,d,ie,De,j,ne,le,se,ue,J,z,G,Ue,U={},ce=[],Ne=/acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i,$=Array.isArray;function S(t,e){for(var n in e)t[n]=e[n];return t}function K(t){t&&t.parentNode&&t.parentNode.removeChild(t)}function Me(t,e,n){var _,i,o,l={};for(o in e)o=="key"?_=e[o]:o=="ref"?i=e[o]:l[o]=e[o];if(arguments.length>2&&(l.children=arguments.length>3?R.call(arguments,2):n),typeof t=="function"&&t.defaultProps!=null)for(o in t.defaultProps)l[o]===void 0&&(l[o]=t.defaultProps[o]);return I(t,l,_,i,null)}function I(t,e,n,_,i){var o={type:t,props:e,key:n,ref:_,__k:null,__:null,__b:0,__e:null,__c:null,constructor:void 0,__v:i??++ie,__i:-1,__u:0};return i==null&&d.vnode!=null&&d.vnode(o),o}function w(t){return t.children}function L(t,e){this.props=t,this.context=e}function H(t,e){if(e==null)return t.__?H(t.__,t.__i+1):null;for(var n;e<t.__k.length;e++)if((n=t.__k[e])!=null&&n.__e!=null)return n.__e;return typeof t.type=="function"?H(t):null}function ae(t){var e,n;if((t=t.__)!=null&&t.__c!=null){for(t.__e=t.__c.base=null,e=0;e<t.__k.length;e++)if((n=t.__k[e])!=null&&n.__e!=null){t.__e=t.__c.base=n.__e;break}return ae(t)}}function _e(t){(!t.__d&&(t.__d=!0)&&j.push(t)&&!O.__r++||ne!=d.debounceRendering)&&((ne=d.debounceRendering)||le)(O)}function O(){for(var t,e,n,_,i,o,l,s=1;j.length;)j.length>s&&j.sort(se),t=j.shift(),s=j.length,t.__d&&(n=void 0,i=(_=(e=t).__v).__e,o=[],l=[],e.__P&&((n=S({},_)).__v=_.__v+1,d.vnode&&d.vnode(n),Z(e.__P,n,_,e.__n,e.__P.namespaceURI,32&_.__u?[i]:null,o,i??H(_),!!(32&_.__u),l),n.__v=_.__v,n.__.__k[n.__i]=n,he(o,n,l),n.__e!=i&&ae(n)));O.__r=0}function fe(t,e,n,_,i,o,l,s,c,u,f){var r,h,a,b,x,k,m=_&&_.__k||ce,v=e.length;for(c=We(n,e,m,c,v),r=0;r<v;r++)(a=n.__k[r])!=null&&(h=a.__i==-1?U:m[a.__i]||U,a.__i=r,k=Z(t,a,h,i,o,l,s,c,u,f),b=a.__e,a.ref&&h.ref!=a.ref&&(h.ref&&Q(h.ref,null,a),f.push(a.ref,a.__c||b,a)),x==null&&b!=null&&(x=b),4&a.__u||h.__k===a.__k?c=pe(a,c,t):typeof a.type=="function"&&k!==void 0?c=k:b&&(c=b.nextSibling),a.__u&=-7);return n.__e=x,c}function We(t,e,n,_,i){var o,l,s,c,u,f=n.length,r=f,h=0;for(t.__k=new Array(i),o=0;o<i;o++)(l=e[o])!=null&&typeof l!="boolean"&&typeof l!="function"?(c=o+h,(l=t.__k[o]=typeof l=="string"||typeof l=="number"||typeof l=="bigint"||l.constructor==String?I(null,l,null,null,null):$(l)?I(w,{children:l},null,null,null):l.constructor==null&&l.__b>0?I(l.type,l.props,l.key,l.ref?l.ref:null,l.__v):l).__=t,l.__b=t.__b+1,s=null,(u=l.__i=Ie(l,n,c,r))!=-1&&(r--,(s=n[u])&&(s.__u|=2)),s==null||s.__v==null?(u==-1&&(i>f?h--:i<f&&h++),typeof l.type!="function"&&(l.__u|=4)):u!=c&&(u==c-1?h--:u==c+1?h++:(u>c?h--:h++,l.__u|=4))):t.__k[o]=null;if(r)for(o=0;o<f;o++)(s=n[o])!=null&&(2&s.__u)==0&&(s.__e==_&&(_=H(s)),me(s,s));return _}function pe(t,e,n){var _,i;if(typeof t.type=="function"){for(_=t.__k,i=0;_&&i<_.length;i++)_[i]&&(_[i].__=t,e=pe(_[i],e,n));return e}t.__e!=e&&(e&&t.type&&!n.contains(e)&&(e=H(t)),n.insertBefore(t.__e,e||null),e=t.__e);do e=e&&e.nextSibling;while(e!=null&&e.nodeType==8);return e}function Ie(t,e,n,_){var i,o,l=t.key,s=t.type,c=e[n];if(c===null&&t.key==null||c&&l==c.key&&s==c.type&&(2&c.__u)==0)return n;if(_>(c!=null&&(2&c.__u)==0?1:0))for(i=n-1,o=n+1;i>=0||o<e.length;){if(i>=0){if((c=e[i])&&(2&c.__u)==0&&l==c.key&&s==c.type)return i;i--}if(o<e.length){if((c=e[o])&&(2&c.__u)==0&&l==c.key&&s==c.type)return o;o++}}return-1}function re(t,e,n){e[0]=="-"?t.setProperty(e,n??""):t[e]=n==null?"":typeof n!="number"||Ne.test(e)?n:n+"px"}function W(t,e,n,_,i){var o,l;e:if(e=="style")if(typeof n=="string")t.style.cssText=n;else{if(typeof _=="string"&&(t.style.cssText=_=""),_)for(e in _)n&&e in n||re(t.style,e,"");if(n)for(e in n)_&&n[e]==_[e]||re(t.style,e,n[e])}else if(e[0]=="o"&&e[1]=="n")o=e!=(e=e.replace(ue,"$1")),l=e.toLowerCase(),e=l in t||e=="onFocusOut"||e=="onFocusIn"?l.slice(2):e.slice(2),t.l||(t.l={}),t.l[e+o]=n,n?_?n.u=_.u:(n.u=J,t.addEventListener(e,o?G:z,o)):t.removeEventListener(e,o?G:z,o);else{if(i=="http://www.w3.org/2000/svg")e=e.replace(/xlink(H|:h)/,"h").replace(/sName$/,"s");else if(e!="width"&&e!="height"&&e!="href"&&e!="list"&&e!="form"&&e!="tabIndex"&&e!="download"&&e!="rowSpan"&&e!="colSpan"&&e!="role"&&e!="popover"&&e in t)try{t[e]=n??"";break e}catch{}typeof n=="function"||(n==null||n===!1&&e[4]!="-"?t.removeAttribute(e):t.setAttribute(e,e=="popover"&&n==1?"":n))}}function oe(t){return function(e){if(this.l){var n=this.l[e.type+t];if(e.t==null)e.t=J++;else if(e.t<n.u)return;return n(d.event?d.event(e):e)}}}function Z(t,e,n,_,i,o,l,s,c,u){var f,r,h,a,b,x,k,m,v,P,T,N,F,te,M,A,V,C=e.type;if(e.constructor!=null)return null;128&n.__u&&(c=!!(32&n.__u),o=[s=e.__e=n.__e]),(f=d.__b)&&f(e);e:if(typeof C=="function")try{if(m=e.props,v="prototype"in C&&C.prototype.render,P=(f=C.contextType)&&_[f.__c],T=f?P?P.props.value:f.__:_,n.__c?k=(r=e.__c=n.__c).__=r.__E:(v?e.__c=r=new C(m,T):(e.__c=r=new L(m,T),r.constructor=C,r.render=Oe),P&&P.sub(r),r.props=m,r.state||(r.state={}),r.context=T,r.__n=_,h=r.__d=!0,r.__h=[],r._sb=[]),v&&r.__s==null&&(r.__s=r.state),v&&C.getDerivedStateFromProps!=null&&(r.__s==r.state&&(r.__s=S({},r.__s)),S(r.__s,C.getDerivedStateFromProps(m,r.__s))),a=r.props,b=r.state,r.__v=e,h)v&&C.getDerivedStateFromProps==null&&r.componentWillMount!=null&&r.componentWillMount(),v&&r.componentDidMount!=null&&r.__h.push(r.componentDidMount);else{if(v&&C.getDerivedStateFromProps==null&&m!==a&&r.componentWillReceiveProps!=null&&r.componentWillReceiveProps(m,T),!r.__e&&r.shouldComponentUpdate!=null&&r.shouldComponentUpdate(m,r.__s,T)===!1||e.__v==n.__v){for(e.__v!=n.__v&&(r.props=m,r.state=r.__s,r.__d=!1),e.__e=n.__e,e.__k=n.__k,e.__k.some(function(D){D&&(D.__=e)}),N=0;N<r._sb.length;N++)r.__h.push(r._sb[N]);r._sb=[],r.__h.length&&l.push(r);break e}r.componentWillUpdate!=null&&r.componentWillUpdate(m,r.__s,T),v&&r.componentDidUpdate!=null&&r.__h.push(function(){r.componentDidUpdate(a,b,x)})}if(r.context=T,r.props=m,r.__P=t,r.__e=!1,F=d.__r,te=0,v){for(r.state=r.__s,r.__d=!1,F&&F(e),f=r.render(r.props,r.state,r.context),M=0;M<r._sb.length;M++)r.__h.push(r._sb[M]);r._sb=[]}else do r.__d=!1,F&&F(e),f=r.render(r.props,r.state,r.context),r.state=r.__s;while(r.__d&&++te<25);r.state=r.__s,r.getChildContext!=null&&(_=S(S({},_),r.getChildContext())),v&&!h&&r.getSnapshotBeforeUpdate!=null&&(x=r.getSnapshotBeforeUpdate(a,b)),A=f,f!=null&&f.type===w&&f.key==null&&(A=de(f.props.children)),s=fe(t,$(A)?A:[A],e,n,_,i,o,l,s,c,u),r.base=e.__e,e.__u&=-161,r.__h.length&&l.push(r),k&&(r.__E=r.__=null)}catch(D){if(e.__v=null,c||o!=null)if(D.then){for(e.__u|=c?160:128;s&&s.nodeType==8&&s.nextSibling;)s=s.nextSibling;o[o.indexOf(s)]=null,e.__e=s}else for(V=o.length;V--;)K(o[V]);else e.__e=n.__e,e.__k=n.__k;d.__e(D,e,n)}else o==null&&e.__v==n.__v?(e.__k=n.__k,e.__e=n.__e):s=e.__e=Le(n.__e,e,n,_,i,o,l,c,u);return(f=d.diffed)&&f(e),128&e.__u?void 0:s}function he(t,e,n){for(var _=0;_<n.length;_++)Q(n[_],n[++_],n[++_]);d.__c&&d.__c(e,t),t.some(function(i){try{t=i.__h,i.__h=[],t.some(function(o){o.call(i)})}catch(o){d.__e(o,i.__v)}})}function de(t){return typeof t!="object"||t==null||t.__b&&t.__b>0?t:$(t)?t.map(de):S({},t)}function Le(t,e,n,_,i,o,l,s,c){var u,f,r,h,a,b,x,k=n.props,m=e.props,v=e.type;if(v=="svg"?i="http://www.w3.org/2000/svg":v=="math"?i="http://www.w3.org/1998/Math/MathML":i||(i="http://www.w3.org/1999/xhtml"),o!=null){for(u=0;u<o.length;u++)if((a=o[u])&&"setAttribute"in a==!!v&&(v?a.localName==v:a.nodeType==3)){t=a,o[u]=null;break}}if(t==null){if(v==null)return document.createTextNode(m);t=document.createElementNS(i,v,m.is&&m),s&&(d.__m&&d.__m(e,o),s=!1),o=null}if(v==null)k===m||s&&t.data==m||(t.data=m);else{if(o=o&&R.call(t.childNodes),k=n.props||U,!s&&o!=null)for(k={},u=0;u<t.attributes.length;u++)k[(a=t.attributes[u]).name]=a.value;for(u in k)if(a=k[u],u!="children"){if(u=="dangerouslySetInnerHTML")r=a;else if(!(u in m)){if(u=="value"&&"defaultValue"in m||u=="checked"&&"defaultChecked"in m)continue;W(t,u,null,a,i)}}for(u in m)a=m[u],u=="children"?h=a:u=="dangerouslySetInnerHTML"?f=a:u=="value"?b=a:u=="checked"?x=a:s&&typeof a!="function"||k[u]===a||W(t,u,a,k[u],i);if(f)s||r&&(f.__html==r.__html||f.__html==t.innerHTML)||(t.innerHTML=f.__html),e.__k=[];else if(r&&(t.innerHTML=""),fe(e.type=="template"?t.content:t,$(h)?h:[h],e,n,_,v=="foreignObject"?"http://www.w3.org/1999/xhtml":i,o,l,o?o[0]:n.__k&&H(n,0),s,c),o!=null)for(u=o.length;u--;)K(o[u]);s||(u="value",v=="progress"&&b==null?t.removeAttribute("value"):b!=null&&(b!==t[u]||v=="progress"&&!b||v=="option"&&b!=k[u])&&W(t,u,b,k[u],i),u="checked",x!=null&&x!=t[u]&&W(t,u,x,k[u],i))}return t}function Q(t,e,n){try{if(typeof t=="function"){var _=typeof t.__u=="function";_&&t.__u(),_&&e==null||(t.__u=t(e))}else t.current=e}catch(i){d.__e(i,n)}}function me(t,e,n){var _,i;if(d.unmount&&d.unmount(t),(_=t.ref)&&(_.current&&_.current!=t.__e||Q(_,null,e)),(_=t.__c)!=null){if(_.componentWillUnmount)try{_.componentWillUnmount()}catch(o){d.__e(o,e)}_.base=_.__P=null}if(_=t.__k)for(i=0;i<_.length;i++)_[i]&&me(_[i],e,n||typeof t.type!="function");n||K(t.__e),t.__c=t.__=t.__e=void 0}function Oe(t,e,n){return this.constructor(t,n)}function ve(t,e,n){var _,i,o,l;e==document&&(e=document.documentElement),d.__&&d.__(t,e),i=(_=typeof n=="function")?null:n&&n.__k||e.__k,o=[],l=[],Z(e,t=(!_&&n||e).__k=Me(w,null,[t]),i||U,U,e.namespaceURI,!_&&n?[n]:i?null:e.firstChild?R.call(e.childNodes):null,o,!_&&n?n:i?i.__e:e.firstChild,_,l),he(o,t,l)}R=ce.slice,d={__e:function(t,e,n,_){for(var i,o,l;e=e.__;)if((i=e.__c)&&!i.__)try{if((o=i.constructor)&&o.getDerivedStateFromError!=null&&(i.setState(o.getDerivedStateFromError(t)),l=i.__d),i.componentDidCatch!=null&&(i.componentDidCatch(t,_||{}),l=i.__d),l)return i.__E=i}catch(s){t=s}throw t}},ie=0,De=function(t){return t!=null&&t.constructor==null},L.prototype.setState=function(t,e){var n;n=this.__s!=null&&this.__s!=this.state?this.__s:this.__s=S({},this.state),typeof t=="function"&&(t=t(S({},n),this.props)),t&&S(n,t),t!=null&&this.__v&&(e&&this._sb.push(e),_e(this))},L.prototype.forceUpdate=function(t){this.__v&&(this.__e=!0,t&&this.__h.push(t),_e(this))},L.prototype.render=w,j=[],le=typeof Promise=="function"?Promise.prototype.then.bind(Promise.resolve()):setTimeout,se=function(t,e){return t.__v.__b-e.__v.__b},O.__r=0,ue=/(PointerCapture)$|Capture$/i,J=0,z=oe(!1),G=oe(!0),Ue=0;var Re=0,Ze=Array.isArray;function p(t,e,n,_,i,o){e||(e={});var l,s,c=e;if("ref"in c)for(s in c={},e)s=="ref"?l=e[s]:c[s]=e[s];var u={type:t,props:c,key:n,ref:l,__k:null,__:null,__b:0,__e:null,__c:null,constructor:void 0,__v:--Re,__i:-1,__u:0,__source:i,__self:o};if(typeof t=="function"&&(l=t.defaultProps))for(s in l)c[s]===void 0&&(c[s]=l[s]);return d.vnode&&d.vnode(u),u}var B,y,X,ye,Y=0,Te=[],g=d,ge=g.__b,be=g.__r,ke=g.diffed,xe=g.__c,Ce=g.unmount,we=g.__;function je(t,e){g.__h&&g.__h(y,t,Y||e),Y=0;var n=y.__H||(y.__H={__:[],__h:[]});return t>=n.__.length&&n.__.push({}),n.__[t]}function E(t){return Y=1,$e(He,t)}function $e(t,e,n){var _=je(B++,2);if(_.t=t,!_.__c&&(_.__=[n?n(e):He(void 0,e),function(s){var c=_.__N?_.__N[0]:_.__[0],u=_.t(c,s);c!==u&&(_.__N=[u,_.__[1]],_.__c.setState({}))}],_.__c=y,!y.__f)){var i=function(s,c,u){if(!_.__c.__H)return!0;var f=_.__c.__H.__.filter(function(h){return!!h.__c});if(f.every(function(h){return!h.__N}))return!o||o.call(this,s,c,u);var r=_.__c.props!==s;return f.forEach(function(h){if(h.__N){var a=h.__[0];h.__=h.__N,h.__N=void 0,a!==h.__[0]&&(r=!0)}}),o&&o.call(this,s,c,u)||r};y.__f=!0;var o=y.shouldComponentUpdate,l=y.componentWillUpdate;y.componentWillUpdate=function(s,c,u){if(this.__e){var f=o;o=void 0,i(s,c,u),o=f}l&&l.call(this,s,c,u)},y.shouldComponentUpdate=i}return _.__N||_.__}function Ee(t,e){var n=je(B++,3);!g.__s&&Ve(n.__H,e)&&(n.__=t,n.u=e,y.__H.__h.push(n))}function qe(){for(var t;t=Te.shift();)if(t.__P&&t.__H)try{t.__H.__h.forEach(q),t.__H.__h.forEach(ee),t.__H.__h=[]}catch(e){t.__H.__h=[],g.__e(e,t.__v)}}g.__b=function(t){y=null,ge&&ge(t)},g.__=function(t,e){t&&e.__k&&e.__k.__m&&(t.__m=e.__k.__m),we&&we(t,e)},g.__r=function(t){be&&be(t),B=0;var e=(y=t.__c).__H;e&&(X===y?(e.__h=[],y.__h=[],e.__.forEach(function(n){n.__N&&(n.__=n.__N),n.u=n.__N=void 0})):(e.__h.forEach(q),e.__h.forEach(ee),e.__h=[],B=0)),X=y},g.diffed=function(t){ke&&ke(t);var e=t.__c;e&&e.__H&&(e.__H.__h.length&&(Te.push(e)!==1&&ye===g.requestAnimationFrame||((ye=g.requestAnimationFrame)||Be)(qe)),e.__H.__.forEach(function(n){n.u&&(n.__H=n.u),n.u=void 0})),X=y=null},g.__c=function(t,e){e.some(function(n){try{n.__h.forEach(q),n.__h=n.__h.filter(function(_){return!_.__||ee(_)})}catch(_){e.some(function(i){i.__h&&(i.__h=[])}),e=[],g.__e(_,n.__v)}}),xe&&xe(t,e)},g.unmount=function(t){Ce&&Ce(t);var e,n=t.__c;n&&n.__H&&(n.__H.__.forEach(function(_){try{q(_)}catch(i){e=i}}),n.__H=void 0,e&&g.__e(e,n.__v))};var Se=typeof requestAnimationFrame=="function";function Be(t){var e,n=function(){clearTimeout(_),Se&&cancelAnimationFrame(e),setTimeout(t)},_=setTimeout(n,35);Se&&(e=requestAnimationFrame(n))}function q(t){var e=y,n=t.__c;typeof n=="function"&&(t.__c=void 0,n()),y=e}function ee(t){var e=y;t.__c=t.__(),y=e}function Ve(t,e){return!t||t.length!==e.length||e.some(function(n,_){return n!==t[_]})}function He(t,e){return typeof e=="function"?e(t):e}function Pe({initialCounter:t}){let[e,n]=E(t),[_,i]=E(""),o=(s,c="")=>{n(s),c&&(i(c),setTimeout(()=>i(""),2e3))},l=async(s,c="GET")=>{console.log("apiCall",s,c);try{i("Updating...");let u=await fetch(`/api/counter${s}`,{method:c,headers:{"Content-Type":"application/json"}});if(!u.ok)throw new Error(`HTTP error! status: ${u.status}`);let f=await u.json();o(f.counter,"Updated!")}catch(u){console.error("API call failed:",u),i("Error updating counter"),setTimeout(()=>i(""),2e3)}};return p("div",{class:"counter-section",children:[p("h2",{children:"Server State Counter"}),p("div",{class:"counter-display",children:p("span",{id:"counter-value",children:e})}),p("div",{class:"counter-controls",children:[p("button",{type:"button",onClick:()=>{console.log("Increment button clicked!"),l("/increment","POST")},children:"+"}),p("button",{type:"button",onClick:()=>{console.log("Decrement button clicked!"),l("/decrement","POST")},children:"-"}),p("button",{type:"button",onClick:()=>{console.log("Reset button clicked!"),l("/reset","POST")},children:"Reset"})]}),p("div",{class:"status",children:_})]})}function Fe({files:t}){return p("div",{class:"files-section",children:[p("h3",{children:"Files:"}),p("p",{children:t.join(", ")})]})}var ze=()=>{let[t,e]=E([]),[n,_]=E(""),[i,o]=E("");return Ee(()=>{(async()=>{try{let c=await(await fetch("/api/status")).json();e(c.status)}catch(s){console.error("Error fetching status:",s)}})()},[]),p(w,{children:[p("div",{children:["Status: ",t.join(", ")]}),p("div",{children:p("label",{children:["Filename:",p("input",{type:"text",value:n,placeholder:"Enter filename...",onChange:l=>_(l.currentTarget.value)})]})}),p("div",{children:p("label",{children:["Content:",p("textarea",{value:i,placeholder:"Enter file content...",onChange:l=>o(l.currentTarget.value)})]})}),p("button",{type:"button",onClick:async()=>{try{let l=await fetch("/api/writeFile",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({filename:n,content:i})});if(l.ok){let s=await l.json();console.log("File written successfully:",s),_(""),o("")}else console.error("Failed to write file")}catch(l){console.error("Error writing file:",l)}},children:"Write File"})]})},Ae=ze;function Ge({counter:t,files:e}){return p(w,{children:[p("h1",{children:"Hello World"}),p("p",{children:"This is a t0555000"}),p(Pe,{initialCounter:t}),p(Ae,{}),p(Fe,{files:e})]})}if(typeof globalThis.document<"u"){let t=document.getElementById("app");if(t){t.innerHTML="";let e=globalThis.__INITIAL_DATA__;if(e){let{counter:n,files:_}=e;ve(p(Ge,{counter:n,files:_}),t)}}}})();
+// ../../../../Users/dsgnr/AppData/Local/deno/npm/registry.npmjs.org/preact/10.26.9/dist/preact.module.js
+var n;
+var l;
+var u;
+var t;
+var i;
+var r;
+var o;
+var e;
+var f;
+var c;
+var s;
+var a;
+var h;
+var p = {};
+var v = [];
+var y = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;
+var w = Array.isArray;
+function d(n2, l3) {
+  for (var u4 in l3) n2[u4] = l3[u4];
+  return n2;
+}
+function g(n2) {
+  n2 && n2.parentNode && n2.parentNode.removeChild(n2);
+}
+function _(l3, u4, t3) {
+  var i4, r3, o3, e3 = {};
+  for (o3 in u4) "key" == o3 ? i4 = u4[o3] : "ref" == o3 ? r3 = u4[o3] : e3[o3] = u4[o3];
+  if (arguments.length > 2 && (e3.children = arguments.length > 3 ? n.call(arguments, 2) : t3), "function" == typeof l3 && null != l3.defaultProps) for (o3 in l3.defaultProps) void 0 === e3[o3] && (e3[o3] = l3.defaultProps[o3]);
+  return m(l3, e3, i4, r3, null);
+}
+function m(n2, t3, i4, r3, o3) {
+  var e3 = {
+    type: n2,
+    props: t3,
+    key: i4,
+    ref: r3,
+    __k: null,
+    __: null,
+    __b: 0,
+    __e: null,
+    __c: null,
+    constructor: void 0,
+    __v: null == o3 ? ++u : o3,
+    __i: -1,
+    __u: 0
+  };
+  return null == o3 && null != l.vnode && l.vnode(e3), e3;
+}
+function k(n2) {
+  return n2.children;
+}
+function x(n2, l3) {
+  this.props = n2, this.context = l3;
+}
+function S(n2, l3) {
+  if (null == l3) return n2.__ ? S(n2.__, n2.__i + 1) : null;
+  for (var u4; l3 < n2.__k.length; l3++) if (null != (u4 = n2.__k[l3]) && null != u4.__e) return u4.__e;
+  return "function" == typeof n2.type ? S(n2) : null;
+}
+function C(n2) {
+  var l3, u4;
+  if (null != (n2 = n2.__) && null != n2.__c) {
+    for (n2.__e = n2.__c.base = null, l3 = 0; l3 < n2.__k.length; l3++) if (null != (u4 = n2.__k[l3]) && null != u4.__e) {
+      n2.__e = n2.__c.base = u4.__e;
+      break;
+    }
+    return C(n2);
+  }
+}
+function M(n2) {
+  (!n2.__d && (n2.__d = true) && i.push(n2) && !$.__r++ || r != l.debounceRendering) && ((r = l.debounceRendering) || o)($);
+}
+function $() {
+  for (var n2, u4, t3, r3, o3, f4, c3, s3 = 1; i.length; ) i.length > s3 && i.sort(e), n2 = i.shift(), s3 = i.length, n2.__d && (t3 = void 0, o3 = (r3 = (u4 = n2).__v).__e, f4 = [], c3 = [], u4.__P && ((t3 = d({}, r3)).__v = r3.__v + 1, l.vnode && l.vnode(t3), O(u4.__P, t3, r3, u4.__n, u4.__P.namespaceURI, 32 & r3.__u ? [
+    o3
+  ] : null, f4, null == o3 ? S(r3) : o3, !!(32 & r3.__u), c3), t3.__v = r3.__v, t3.__.__k[t3.__i] = t3, z(f4, t3, c3), t3.__e != o3 && C(t3)));
+  $.__r = 0;
+}
+function I(n2, l3, u4, t3, i4, r3, o3, e3, f4, c3, s3) {
+  var a3, h3, y3, w3, d3, g2, _2 = t3 && t3.__k || v, m3 = l3.length;
+  for (f4 = P(u4, l3, _2, f4, m3), a3 = 0; a3 < m3; a3++) null != (y3 = u4.__k[a3]) && (h3 = -1 == y3.__i ? p : _2[y3.__i] || p, y3.__i = a3, g2 = O(n2, y3, h3, i4, r3, o3, e3, f4, c3, s3), w3 = y3.__e, y3.ref && h3.ref != y3.ref && (h3.ref && q(h3.ref, null, y3), s3.push(y3.ref, y3.__c || w3, y3)), null == d3 && null != w3 && (d3 = w3), 4 & y3.__u || h3.__k === y3.__k ? f4 = A(y3, f4, n2) : "function" == typeof y3.type && void 0 !== g2 ? f4 = g2 : w3 && (f4 = w3.nextSibling), y3.__u &= -7);
+  return u4.__e = d3, f4;
+}
+function P(n2, l3, u4, t3, i4) {
+  var r3, o3, e3, f4, c3, s3 = u4.length, a3 = s3, h3 = 0;
+  for (n2.__k = new Array(i4), r3 = 0; r3 < i4; r3++) null != (o3 = l3[r3]) && "boolean" != typeof o3 && "function" != typeof o3 ? (f4 = r3 + h3, (o3 = n2.__k[r3] = "string" == typeof o3 || "number" == typeof o3 || "bigint" == typeof o3 || o3.constructor == String ? m(null, o3, null, null, null) : w(o3) ? m(k, {
+    children: o3
+  }, null, null, null) : null == o3.constructor && o3.__b > 0 ? m(o3.type, o3.props, o3.key, o3.ref ? o3.ref : null, o3.__v) : o3).__ = n2, o3.__b = n2.__b + 1, e3 = null, -1 != (c3 = o3.__i = L(o3, u4, f4, a3)) && (a3--, (e3 = u4[c3]) && (e3.__u |= 2)), null == e3 || null == e3.__v ? (-1 == c3 && (i4 > s3 ? h3-- : i4 < s3 && h3++), "function" != typeof o3.type && (o3.__u |= 4)) : c3 != f4 && (c3 == f4 - 1 ? h3-- : c3 == f4 + 1 ? h3++ : (c3 > f4 ? h3-- : h3++, o3.__u |= 4))) : n2.__k[r3] = null;
+  if (a3) for (r3 = 0; r3 < s3; r3++) null != (e3 = u4[r3]) && 0 == (2 & e3.__u) && (e3.__e == t3 && (t3 = S(e3)), B(e3, e3));
+  return t3;
+}
+function A(n2, l3, u4) {
+  var t3, i4;
+  if ("function" == typeof n2.type) {
+    for (t3 = n2.__k, i4 = 0; t3 && i4 < t3.length; i4++) t3[i4] && (t3[i4].__ = n2, l3 = A(t3[i4], l3, u4));
+    return l3;
+  }
+  n2.__e != l3 && (l3 && n2.type && !u4.contains(l3) && (l3 = S(n2)), u4.insertBefore(n2.__e, l3 || null), l3 = n2.__e);
+  do {
+    l3 = l3 && l3.nextSibling;
+  } while (null != l3 && 8 == l3.nodeType);
+  return l3;
+}
+function L(n2, l3, u4, t3) {
+  var i4, r3, o3 = n2.key, e3 = n2.type, f4 = l3[u4];
+  if (null === f4 && null == n2.key || f4 && o3 == f4.key && e3 == f4.type && 0 == (2 & f4.__u)) return u4;
+  if (t3 > (null != f4 && 0 == (2 & f4.__u) ? 1 : 0)) for (i4 = u4 - 1, r3 = u4 + 1; i4 >= 0 || r3 < l3.length; ) {
+    if (i4 >= 0) {
+      if ((f4 = l3[i4]) && 0 == (2 & f4.__u) && o3 == f4.key && e3 == f4.type) return i4;
+      i4--;
+    }
+    if (r3 < l3.length) {
+      if ((f4 = l3[r3]) && 0 == (2 & f4.__u) && o3 == f4.key && e3 == f4.type) return r3;
+      r3++;
+    }
+  }
+  return -1;
+}
+function T(n2, l3, u4) {
+  "-" == l3[0] ? n2.setProperty(l3, null == u4 ? "" : u4) : n2[l3] = null == u4 ? "" : "number" != typeof u4 || y.test(l3) ? u4 : u4 + "px";
+}
+function j(n2, l3, u4, t3, i4) {
+  var r3, o3;
+  n: if ("style" == l3) if ("string" == typeof u4) n2.style.cssText = u4;
+  else {
+    if ("string" == typeof t3 && (n2.style.cssText = t3 = ""), t3) for (l3 in t3) u4 && l3 in u4 || T(n2.style, l3, "");
+    if (u4) for (l3 in u4) t3 && u4[l3] == t3[l3] || T(n2.style, l3, u4[l3]);
+  }
+  else if ("o" == l3[0] && "n" == l3[1]) r3 = l3 != (l3 = l3.replace(f, "$1")), o3 = l3.toLowerCase(), l3 = o3 in n2 || "onFocusOut" == l3 || "onFocusIn" == l3 ? o3.slice(2) : l3.slice(2), n2.l || (n2.l = {}), n2.l[l3 + r3] = u4, u4 ? t3 ? u4.u = t3.u : (u4.u = c, n2.addEventListener(l3, r3 ? a : s, r3)) : n2.removeEventListener(l3, r3 ? a : s, r3);
+  else {
+    if ("http://www.w3.org/2000/svg" == i4) l3 = l3.replace(/xlink(H|:h)/, "h").replace(/sName$/, "s");
+    else if ("width" != l3 && "height" != l3 && "href" != l3 && "list" != l3 && "form" != l3 && "tabIndex" != l3 && "download" != l3 && "rowSpan" != l3 && "colSpan" != l3 && "role" != l3 && "popover" != l3 && l3 in n2) try {
+      n2[l3] = null == u4 ? "" : u4;
+      break n;
+    } catch (n3) {
+    }
+    "function" == typeof u4 || (null == u4 || false === u4 && "-" != l3[4] ? n2.removeAttribute(l3) : n2.setAttribute(l3, "popover" == l3 && 1 == u4 ? "" : u4));
+  }
+}
+function F(n2) {
+  return function(u4) {
+    if (this.l) {
+      var t3 = this.l[u4.type + n2];
+      if (null == u4.t) u4.t = c++;
+      else if (u4.t < t3.u) return;
+      return t3(l.event ? l.event(u4) : u4);
+    }
+  };
+}
+function O(n2, u4, t3, i4, r3, o3, e3, f4, c3, s3) {
+  var a3, h3, p3, v3, y3, _2, m3, b, S2, C3, M2, $2, P2, A2, H, L2, T2, j3 = u4.type;
+  if (null != u4.constructor) return null;
+  128 & t3.__u && (c3 = !!(32 & t3.__u), o3 = [
+    f4 = u4.__e = t3.__e
+  ]), (a3 = l.__b) && a3(u4);
+  n: if ("function" == typeof j3) try {
+    if (b = u4.props, S2 = "prototype" in j3 && j3.prototype.render, C3 = (a3 = j3.contextType) && i4[a3.__c], M2 = a3 ? C3 ? C3.props.value : a3.__ : i4, t3.__c ? m3 = (h3 = u4.__c = t3.__c).__ = h3.__E : (S2 ? u4.__c = h3 = new j3(b, M2) : (u4.__c = h3 = new x(b, M2), h3.constructor = j3, h3.render = D), C3 && C3.sub(h3), h3.props = b, h3.state || (h3.state = {}), h3.context = M2, h3.__n = i4, p3 = h3.__d = true, h3.__h = [], h3._sb = []), S2 && null == h3.__s && (h3.__s = h3.state), S2 && null != j3.getDerivedStateFromProps && (h3.__s == h3.state && (h3.__s = d({}, h3.__s)), d(h3.__s, j3.getDerivedStateFromProps(b, h3.__s))), v3 = h3.props, y3 = h3.state, h3.__v = u4, p3) S2 && null == j3.getDerivedStateFromProps && null != h3.componentWillMount && h3.componentWillMount(), S2 && null != h3.componentDidMount && h3.__h.push(h3.componentDidMount);
+    else {
+      if (S2 && null == j3.getDerivedStateFromProps && b !== v3 && null != h3.componentWillReceiveProps && h3.componentWillReceiveProps(b, M2), !h3.__e && null != h3.shouldComponentUpdate && false === h3.shouldComponentUpdate(b, h3.__s, M2) || u4.__v == t3.__v) {
+        for (u4.__v != t3.__v && (h3.props = b, h3.state = h3.__s, h3.__d = false), u4.__e = t3.__e, u4.__k = t3.__k, u4.__k.some(function(n3) {
+          n3 && (n3.__ = u4);
+        }), $2 = 0; $2 < h3._sb.length; $2++) h3.__h.push(h3._sb[$2]);
+        h3._sb = [], h3.__h.length && e3.push(h3);
+        break n;
+      }
+      null != h3.componentWillUpdate && h3.componentWillUpdate(b, h3.__s, M2), S2 && null != h3.componentDidUpdate && h3.__h.push(function() {
+        h3.componentDidUpdate(v3, y3, _2);
+      });
+    }
+    if (h3.context = M2, h3.props = b, h3.__P = n2, h3.__e = false, P2 = l.__r, A2 = 0, S2) {
+      for (h3.state = h3.__s, h3.__d = false, P2 && P2(u4), a3 = h3.render(h3.props, h3.state, h3.context), H = 0; H < h3._sb.length; H++) h3.__h.push(h3._sb[H]);
+      h3._sb = [];
+    } else do {
+      h3.__d = false, P2 && P2(u4), a3 = h3.render(h3.props, h3.state, h3.context), h3.state = h3.__s;
+    } while (h3.__d && ++A2 < 25);
+    h3.state = h3.__s, null != h3.getChildContext && (i4 = d(d({}, i4), h3.getChildContext())), S2 && !p3 && null != h3.getSnapshotBeforeUpdate && (_2 = h3.getSnapshotBeforeUpdate(v3, y3)), L2 = a3, null != a3 && a3.type === k && null == a3.key && (L2 = N(a3.props.children)), f4 = I(n2, w(L2) ? L2 : [
+      L2
+    ], u4, t3, i4, r3, o3, e3, f4, c3, s3), h3.base = u4.__e, u4.__u &= -161, h3.__h.length && e3.push(h3), m3 && (h3.__E = h3.__ = null);
+  } catch (n3) {
+    if (u4.__v = null, c3 || null != o3) if (n3.then) {
+      for (u4.__u |= c3 ? 160 : 128; f4 && 8 == f4.nodeType && f4.nextSibling; ) f4 = f4.nextSibling;
+      o3[o3.indexOf(f4)] = null, u4.__e = f4;
+    } else for (T2 = o3.length; T2--; ) g(o3[T2]);
+    else u4.__e = t3.__e, u4.__k = t3.__k;
+    l.__e(n3, u4, t3);
+  }
+  else null == o3 && u4.__v == t3.__v ? (u4.__k = t3.__k, u4.__e = t3.__e) : f4 = u4.__e = V(t3.__e, u4, t3, i4, r3, o3, e3, c3, s3);
+  return (a3 = l.diffed) && a3(u4), 128 & u4.__u ? void 0 : f4;
+}
+function z(n2, u4, t3) {
+  for (var i4 = 0; i4 < t3.length; i4++) q(t3[i4], t3[++i4], t3[++i4]);
+  l.__c && l.__c(u4, n2), n2.some(function(u5) {
+    try {
+      n2 = u5.__h, u5.__h = [], n2.some(function(n3) {
+        n3.call(u5);
+      });
+    } catch (n3) {
+      l.__e(n3, u5.__v);
+    }
+  });
+}
+function N(n2) {
+  return "object" != typeof n2 || null == n2 || n2.__b && n2.__b > 0 ? n2 : w(n2) ? n2.map(N) : d({}, n2);
+}
+function V(u4, t3, i4, r3, o3, e3, f4, c3, s3) {
+  var a3, h3, v3, y3, d3, _2, m3, b = i4.props, k3 = t3.props, x2 = t3.type;
+  if ("svg" == x2 ? o3 = "http://www.w3.org/2000/svg" : "math" == x2 ? o3 = "http://www.w3.org/1998/Math/MathML" : o3 || (o3 = "http://www.w3.org/1999/xhtml"), null != e3) {
+    for (a3 = 0; a3 < e3.length; a3++) if ((d3 = e3[a3]) && "setAttribute" in d3 == !!x2 && (x2 ? d3.localName == x2 : 3 == d3.nodeType)) {
+      u4 = d3, e3[a3] = null;
+      break;
+    }
+  }
+  if (null == u4) {
+    if (null == x2) return document.createTextNode(k3);
+    u4 = document.createElementNS(o3, x2, k3.is && k3), c3 && (l.__m && l.__m(t3, e3), c3 = false), e3 = null;
+  }
+  if (null == x2) b === k3 || c3 && u4.data == k3 || (u4.data = k3);
+  else {
+    if (e3 = e3 && n.call(u4.childNodes), b = i4.props || p, !c3 && null != e3) for (b = {}, a3 = 0; a3 < u4.attributes.length; a3++) b[(d3 = u4.attributes[a3]).name] = d3.value;
+    for (a3 in b) if (d3 = b[a3], "children" == a3) ;
+    else if ("dangerouslySetInnerHTML" == a3) v3 = d3;
+    else if (!(a3 in k3)) {
+      if ("value" == a3 && "defaultValue" in k3 || "checked" == a3 && "defaultChecked" in k3) continue;
+      j(u4, a3, null, d3, o3);
+    }
+    for (a3 in k3) d3 = k3[a3], "children" == a3 ? y3 = d3 : "dangerouslySetInnerHTML" == a3 ? h3 = d3 : "value" == a3 ? _2 = d3 : "checked" == a3 ? m3 = d3 : c3 && "function" != typeof d3 || b[a3] === d3 || j(u4, a3, d3, b[a3], o3);
+    if (h3) c3 || v3 && (h3.__html == v3.__html || h3.__html == u4.innerHTML) || (u4.innerHTML = h3.__html), t3.__k = [];
+    else if (v3 && (u4.innerHTML = ""), I("template" == t3.type ? u4.content : u4, w(y3) ? y3 : [
+      y3
+    ], t3, i4, r3, "foreignObject" == x2 ? "http://www.w3.org/1999/xhtml" : o3, e3, f4, e3 ? e3[0] : i4.__k && S(i4, 0), c3, s3), null != e3) for (a3 = e3.length; a3--; ) g(e3[a3]);
+    c3 || (a3 = "value", "progress" == x2 && null == _2 ? u4.removeAttribute("value") : null != _2 && (_2 !== u4[a3] || "progress" == x2 && !_2 || "option" == x2 && _2 != b[a3]) && j(u4, a3, _2, b[a3], o3), a3 = "checked", null != m3 && m3 != u4[a3] && j(u4, a3, m3, b[a3], o3));
+  }
+  return u4;
+}
+function q(n2, u4, t3) {
+  try {
+    if ("function" == typeof n2) {
+      var i4 = "function" == typeof n2.__u;
+      i4 && n2.__u(), i4 && null == u4 || (n2.__u = n2(u4));
+    } else n2.current = u4;
+  } catch (n3) {
+    l.__e(n3, t3);
+  }
+}
+function B(n2, u4, t3) {
+  var i4, r3;
+  if (l.unmount && l.unmount(n2), (i4 = n2.ref) && (i4.current && i4.current != n2.__e || q(i4, null, u4)), null != (i4 = n2.__c)) {
+    if (i4.componentWillUnmount) try {
+      i4.componentWillUnmount();
+    } catch (n3) {
+      l.__e(n3, u4);
+    }
+    i4.base = i4.__P = null;
+  }
+  if (i4 = n2.__k) for (r3 = 0; r3 < i4.length; r3++) i4[r3] && B(i4[r3], u4, t3 || "function" != typeof n2.type);
+  t3 || g(n2.__e), n2.__c = n2.__ = n2.__e = void 0;
+}
+function D(n2, l3, u4) {
+  return this.constructor(n2, u4);
+}
+function E(u4, t3, i4) {
+  var r3, o3, e3, f4;
+  t3 == document && (t3 = document.documentElement), l.__ && l.__(u4, t3), o3 = (r3 = "function" == typeof i4) ? null : i4 && i4.__k || t3.__k, e3 = [], f4 = [], O(t3, u4 = (!r3 && i4 || t3).__k = _(k, null, [
+    u4
+  ]), o3 || p, p, t3.namespaceURI, !r3 && i4 ? [
+    i4
+  ] : o3 ? null : t3.firstChild ? n.call(t3.childNodes) : null, e3, !r3 && i4 ? i4 : o3 ? o3.__e : t3.firstChild, r3, f4), z(e3, u4, f4);
+}
+n = v.slice, l = {
+  __e: function(n2, l3, u4, t3) {
+    for (var i4, r3, o3; l3 = l3.__; ) if ((i4 = l3.__c) && !i4.__) try {
+      if ((r3 = i4.constructor) && null != r3.getDerivedStateFromError && (i4.setState(r3.getDerivedStateFromError(n2)), o3 = i4.__d), null != i4.componentDidCatch && (i4.componentDidCatch(n2, t3 || {}), o3 = i4.__d), o3) return i4.__E = i4;
+    } catch (l4) {
+      n2 = l4;
+    }
+    throw n2;
+  }
+}, u = 0, t = function(n2) {
+  return null != n2 && null == n2.constructor;
+}, x.prototype.setState = function(n2, l3) {
+  var u4;
+  u4 = null != this.__s && this.__s != this.state ? this.__s : this.__s = d({}, this.state), "function" == typeof n2 && (n2 = n2(d({}, u4), this.props)), n2 && d(u4, n2), null != n2 && this.__v && (l3 && this._sb.push(l3), M(this));
+}, x.prototype.forceUpdate = function(n2) {
+  this.__v && (this.__e = true, n2 && this.__h.push(n2), M(this));
+}, x.prototype.render = k, i = [], o = "function" == typeof Promise ? Promise.prototype.then.bind(Promise.resolve()) : setTimeout, e = function(n2, l3) {
+  return n2.__v.__b - l3.__v.__b;
+}, $.__r = 0, f = /(PointerCapture)$|Capture$/i, c = 0, s = F(false), a = F(true), h = 0;
+
+// ../../../../Users/dsgnr/AppData/Local/deno/npm/registry.npmjs.org/preact/10.26.9/jsx-runtime/dist/jsxRuntime.module.js
+var f2 = 0;
+var i2 = Array.isArray;
+function u2(e3, t3, n2, o3, i4, u4) {
+  t3 || (t3 = {});
+  var a3, c3, p3 = t3;
+  if ("ref" in p3) for (c3 in p3 = {}, t3) "ref" == c3 ? a3 = t3[c3] : p3[c3] = t3[c3];
+  var l3 = {
+    type: e3,
+    props: p3,
+    key: n2,
+    ref: a3,
+    __k: null,
+    __: null,
+    __b: 0,
+    __e: null,
+    __c: null,
+    constructor: void 0,
+    __v: --f2,
+    __i: -1,
+    __u: 0,
+    __source: i4,
+    __self: u4
+  };
+  if ("function" == typeof e3 && (a3 = e3.defaultProps)) for (c3 in a3) void 0 === p3[c3] && (p3[c3] = a3[c3]);
+  return l.vnode && l.vnode(l3), l3;
+}
+
+// ../../../../Users/dsgnr/AppData/Local/deno/npm/registry.npmjs.org/preact/10.26.9/hooks/dist/hooks.module.js
+var t2;
+var r2;
+var u3;
+var i3;
+var o2 = 0;
+var f3 = [];
+var c2 = l;
+var e2 = c2.__b;
+var a2 = c2.__r;
+var v2 = c2.diffed;
+var l2 = c2.__c;
+var m2 = c2.unmount;
+var s2 = c2.__;
+function p2(n2, t3) {
+  c2.__h && c2.__h(r2, n2, o2 || t3), o2 = 0;
+  var u4 = r2.__H || (r2.__H = {
+    __: [],
+    __h: []
+  });
+  return n2 >= u4.__.length && u4.__.push({}), u4.__[n2];
+}
+function d2(n2) {
+  return o2 = 1, h2(D2, n2);
+}
+function h2(n2, u4, i4) {
+  var o3 = p2(t2++, 2);
+  if (o3.t = n2, !o3.__c && (o3.__ = [
+    i4 ? i4(u4) : D2(void 0, u4),
+    function(n3) {
+      var t3 = o3.__N ? o3.__N[0] : o3.__[0], r3 = o3.t(t3, n3);
+      t3 !== r3 && (o3.__N = [
+        r3,
+        o3.__[1]
+      ], o3.__c.setState({}));
+    }
+  ], o3.__c = r2, !r2.__f)) {
+    var f4 = function(n3, t3, r3) {
+      if (!o3.__c.__H) return true;
+      var u5 = o3.__c.__H.__.filter(function(n4) {
+        return !!n4.__c;
+      });
+      if (u5.every(function(n4) {
+        return !n4.__N;
+      })) return !c3 || c3.call(this, n3, t3, r3);
+      var i5 = o3.__c.props !== n3;
+      return u5.forEach(function(n4) {
+        if (n4.__N) {
+          var t4 = n4.__[0];
+          n4.__ = n4.__N, n4.__N = void 0, t4 !== n4.__[0] && (i5 = true);
+        }
+      }), c3 && c3.call(this, n3, t3, r3) || i5;
+    };
+    r2.__f = true;
+    var c3 = r2.shouldComponentUpdate, e3 = r2.componentWillUpdate;
+    r2.componentWillUpdate = function(n3, t3, r3) {
+      if (this.__e) {
+        var u5 = c3;
+        c3 = void 0, f4(n3, t3, r3), c3 = u5;
+      }
+      e3 && e3.call(this, n3, t3, r3);
+    }, r2.shouldComponentUpdate = f4;
+  }
+  return o3.__N || o3.__;
+}
+function y2(n2, u4) {
+  var i4 = p2(t2++, 3);
+  !c2.__s && C2(i4.__H, u4) && (i4.__ = n2, i4.u = u4, r2.__H.__h.push(i4));
+}
+function j2() {
+  for (var n2; n2 = f3.shift(); ) if (n2.__P && n2.__H) try {
+    n2.__H.__h.forEach(z2), n2.__H.__h.forEach(B2), n2.__H.__h = [];
+  } catch (t3) {
+    n2.__H.__h = [], c2.__e(t3, n2.__v);
+  }
+}
+c2.__b = function(n2) {
+  r2 = null, e2 && e2(n2);
+}, c2.__ = function(n2, t3) {
+  n2 && t3.__k && t3.__k.__m && (n2.__m = t3.__k.__m), s2 && s2(n2, t3);
+}, c2.__r = function(n2) {
+  a2 && a2(n2), t2 = 0;
+  var i4 = (r2 = n2.__c).__H;
+  i4 && (u3 === r2 ? (i4.__h = [], r2.__h = [], i4.__.forEach(function(n3) {
+    n3.__N && (n3.__ = n3.__N), n3.u = n3.__N = void 0;
+  })) : (i4.__h.forEach(z2), i4.__h.forEach(B2), i4.__h = [], t2 = 0)), u3 = r2;
+}, c2.diffed = function(n2) {
+  v2 && v2(n2);
+  var t3 = n2.__c;
+  t3 && t3.__H && (t3.__H.__h.length && (1 !== f3.push(t3) && i3 === c2.requestAnimationFrame || ((i3 = c2.requestAnimationFrame) || w2)(j2)), t3.__H.__.forEach(function(n3) {
+    n3.u && (n3.__H = n3.u), n3.u = void 0;
+  })), u3 = r2 = null;
+}, c2.__c = function(n2, t3) {
+  t3.some(function(n3) {
+    try {
+      n3.__h.forEach(z2), n3.__h = n3.__h.filter(function(n4) {
+        return !n4.__ || B2(n4);
+      });
+    } catch (r3) {
+      t3.some(function(n4) {
+        n4.__h && (n4.__h = []);
+      }), t3 = [], c2.__e(r3, n3.__v);
+    }
+  }), l2 && l2(n2, t3);
+}, c2.unmount = function(n2) {
+  m2 && m2(n2);
+  var t3, r3 = n2.__c;
+  r3 && r3.__H && (r3.__H.__.forEach(function(n3) {
+    try {
+      z2(n3);
+    } catch (n4) {
+      t3 = n4;
+    }
+  }), r3.__H = void 0, t3 && c2.__e(t3, r3.__v));
+};
+var k2 = "function" == typeof requestAnimationFrame;
+function w2(n2) {
+  var t3, r3 = function() {
+    clearTimeout(u4), k2 && cancelAnimationFrame(t3), setTimeout(n2);
+  }, u4 = setTimeout(r3, 35);
+  k2 && (t3 = requestAnimationFrame(r3));
+}
+function z2(n2) {
+  var t3 = r2, u4 = n2.__c;
+  "function" == typeof u4 && (n2.__c = void 0, u4()), r2 = t3;
+}
+function B2(n2) {
+  var t3 = r2;
+  n2.__c = n2.__(), r2 = t3;
+}
+function C2(n2, t3) {
+  return !n2 || n2.length !== t3.length || t3.some(function(t4, r3) {
+    return t4 !== n2[r3];
+  });
+}
+function D2(n2, t3) {
+  return "function" == typeof t3 ? t3(n2) : t3;
+}
+
+// ../../../../Users/dsgnr/AppData/Local/deno/npm/registry.npmjs.org/zustand/4.5.5/esm/vanilla.mjs
+var createStoreImpl = (createState) => {
+  let state;
+  const listeners = /* @__PURE__ */ new Set();
+  const setState = (partial, replace) => {
+    const nextState = typeof partial === "function" ? partial(state) : partial;
+    if (!Object.is(nextState, state)) {
+      const previousState = state;
+      state = (replace != null ? replace : typeof nextState !== "object" || nextState === null) ? nextState : Object.assign({}, state, nextState);
+      listeners.forEach((listener) => listener(state, previousState));
+    }
+  };
+  const getState = () => state;
+  const getInitialState = () => initialState;
+  const subscribe = (listener) => {
+    listeners.add(listener);
+    return () => listeners.delete(listener);
+  };
+  const destroy = () => {
+    if ((import.meta.env ? import.meta.env.MODE : void 0) !== "production") {
+      console.warn("[DEPRECATED] The `destroy` method will be unsupported in a future version. Instead use unsubscribe function returned by subscribe. Everything will be garbage-collected if store is garbage-collected.");
+    }
+    listeners.clear();
+  };
+  const api = {
+    setState,
+    getState,
+    getInitialState,
+    subscribe,
+    destroy
+  };
+  const initialState = state = createState(setState, getState, api);
+  return api;
+};
+var createStore = (createState) => createState ? createStoreImpl(createState) : createStoreImpl;
+
+// store/useStore.ts
+var store = createStore((set) => ({
+  // Counter state
+  counter: 0,
+  incrementCounter: () => set((state) => ({
+    counter: state.counter + 1
+  })),
+  decrementCounter: () => set((state) => ({
+    counter: state.counter - 1
+  })),
+  resetCounter: () => set({
+    counter: 0
+  }),
+  setCounter: (value) => set({
+    counter: value
+  }),
+  // Files state
+  files: [],
+  setFiles: (files) => set({
+    files
+  }),
+  // Status state
+  status: [],
+  setStatus: (status) => set({
+    status
+  }),
+  // Loading state
+  isLoading: false,
+  setIsLoading: (loading) => set({
+    isLoading: loading
+  })
+}));
+var useStore = () => {
+  const [state, setState] = d2(store.getState());
+  y2(() => {
+    const unsubscribe = store.subscribe((newState) => {
+      setState(newState);
+    });
+    return unsubscribe;
+  }, []);
+  return state;
+};
+
+// components/Counter.tsx
+function Counter({ initialCounter }) {
+  const { counter, setCounter, isLoading, setIsLoading } = useStore();
+  const [status, setStatus] = d2("");
+  y2(() => {
+    setCounter(initialCounter);
+  }, [
+    initialCounter,
+    setCounter
+  ]);
+  const updateCounter = (newValue, message = "") => {
+    setCounter(newValue);
+    if (message) {
+      setStatus(message);
+      setTimeout(() => setStatus(""), 2e3);
+    }
+  };
+  const apiCall = async (endpoint, method = "GET") => {
+    try {
+      setIsLoading(true);
+      setStatus("Updating...");
+      const response = await fetch(`/api/counter${endpoint}`, {
+        method,
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      updateCounter(data.counter, "Updated!");
+    } catch (error) {
+      console.error("API call failed:", error);
+      setStatus("Error updating counter");
+      setTimeout(() => setStatus(""), 2e3);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+  return /* @__PURE__ */ u2("div", {
+    class: "counter-section",
+    children: [
+      /* @__PURE__ */ u2("h2", {
+        children: [
+          "Server State Counter ",
+          isLoading && "(Loading...)"
+        ]
+      }),
+      /* @__PURE__ */ u2("div", {
+        class: "counter-display",
+        children: /* @__PURE__ */ u2("span", {
+          id: "counter-value",
+          children: counter
+        })
+      }),
+      /* @__PURE__ */ u2("div", {
+        class: "counter-controls",
+        children: [
+          /* @__PURE__ */ u2("button", {
+            type: "button",
+            onClick: () => apiCall("/increment", "POST"),
+            disabled: isLoading,
+            children: "+"
+          }),
+          /* @__PURE__ */ u2("button", {
+            type: "button",
+            onClick: () => apiCall("/decrement", "POST"),
+            disabled: isLoading,
+            children: "-"
+          }),
+          /* @__PURE__ */ u2("button", {
+            type: "button",
+            onClick: () => apiCall("/reset", "POST"),
+            disabled: isLoading,
+            children: "Reset"
+          })
+        ]
+      }),
+      /* @__PURE__ */ u2("div", {
+        class: "status",
+        children: status
+      })
+    ]
+  });
+}
+
+// components/Files.tsx
+function Files({ files: initialFiles }) {
+  const { files, setFiles } = useStore();
+  if (files.length === 0 && initialFiles.length > 0) {
+    setFiles(initialFiles);
+  }
+  return /* @__PURE__ */ u2("div", {
+    class: "files-section",
+    children: [
+      /* @__PURE__ */ u2("h3", {
+        children: "Files (from Zustand):"
+      }),
+      /* @__PURE__ */ u2("p", {
+        children: files.join(", ")
+      })
+    ]
+  });
+}
+
+// components/Status.tsx
+var Status = () => {
+  const { status, setStatus, isLoading, setIsLoading } = useStore();
+  const [filename, setFilename] = d2("");
+  const [content, setContent] = d2("");
+  y2(() => {
+    const handleStatus = async () => {
+      try {
+        setIsLoading(true);
+        const res = await fetch("/api/status");
+        const data = await res.json();
+        setStatus(data.status);
+      } catch (error) {
+        console.error("Error fetching status:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    handleStatus();
+  }, [
+    setStatus,
+    setIsLoading
+  ]);
+  return /* @__PURE__ */ u2(k, {
+    children: [
+      /* @__PURE__ */ u2("div", {
+        children: [
+          "Status: ",
+          status.join(", ")
+        ]
+      }),
+      /* @__PURE__ */ u2("div", {
+        children: /* @__PURE__ */ u2("label", {
+          children: [
+            "Filename:",
+            /* @__PURE__ */ u2("input", {
+              type: "text",
+              value: filename,
+              placeholder: "Enter filename...",
+              onChange: (e3) => setFilename(e3.currentTarget.value)
+            })
+          ]
+        })
+      }),
+      /* @__PURE__ */ u2("div", {
+        children: /* @__PURE__ */ u2("label", {
+          children: [
+            "Content:",
+            /* @__PURE__ */ u2("textarea", {
+              value: content,
+              placeholder: "Enter file content...",
+              onChange: (e3) => setContent(e3.currentTarget.value)
+            })
+          ]
+        })
+      }),
+      /* @__PURE__ */ u2("button", {
+        type: "button",
+        onClick: async () => {
+          try {
+            const response = await fetch("/api/writeFile", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({
+                filename,
+                content
+              })
+            });
+            if (response.ok) {
+              const result = await response.json();
+              console.log("File written successfully:", result);
+              setFilename("");
+              setContent("");
+            } else {
+              console.error("Failed to write file");
+            }
+          } catch (error) {
+            console.error("Error writing file:", error);
+          }
+        },
+        children: "Write File"
+      })
+    ]
+  });
+};
+var Status_default = Status;
+
+// components/App.tsx
+function App({ counter: initialCounter, files }) {
+  const { setCounter, setFiles } = useStore();
+  console.log("HMR");
+  y2(() => {
+    setCounter(initialCounter);
+    setFiles(files);
+  }, [
+    initialCounter,
+    files,
+    setCounter,
+    setFiles
+  ]);
+  return /* @__PURE__ */ u2(k, {
+    children: [
+      /* @__PURE__ */ u2("h1", {
+        children: "Hello World Offline with Zustand!"
+      }),
+      /* @__PURE__ */ u2("p", {
+        children: "This app now uses Zustand for state management"
+      }),
+      /* @__PURE__ */ u2(Counter, {
+        initialCounter
+      }),
+      /* @__PURE__ */ u2(Status_default, {}),
+      /* @__PURE__ */ u2(Files, {
+        files
+      })
+    ]
+  });
+}
+if (typeof globalThis.document !== "undefined") {
+  const appElement = document.getElementById("app");
+  if (appElement) {
+    appElement.innerHTML = "";
+    const initialData = globalThis.__INITIAL_DATA__;
+    if (initialData) {
+      const { counter, files } = initialData;
+      E(/* @__PURE__ */ u2(App, {
+        counter,
+        files
+      }), appElement);
+    }
+  }
+}
+export {
+  App
+};
+//# sourceMappingURL=bundle.js.map

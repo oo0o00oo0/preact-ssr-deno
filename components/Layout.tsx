@@ -7,6 +7,7 @@ interface LayoutProps {
 
 export function Layout({ css, script, bundleUrl, children }: LayoutProps) {
   console.log("Layout");
+  console.log(css);
   return (
     <html lang="en">
       <head>
@@ -18,7 +19,7 @@ export function Layout({ css, script, bundleUrl, children }: LayoutProps) {
       <body>
         <div id="app">{children}</div>
         <script dangerouslySetInnerHTML={{ __html: script }} />
-        <script src={bundleUrl}></script>
+        <script type="module" src={bundleUrl}></script>
       </body>
     </html>
   );

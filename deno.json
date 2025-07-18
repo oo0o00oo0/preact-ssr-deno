@@ -4,8 +4,8 @@
     "jsxImportSource": "preact"
   },
   "tasks": {
-    "client-dev": "deno bundle --watch --sourcemap --platform=browser --format=iife components/App.tsx -o client/bundle.js",
-    "client-build": "deno bundle --minify --platform=browser --format=iife components/App.tsx -o client/bundle.js",
+    "client-dev": "deno bundle --watch --sourcemap --platform=browser --format=esm components/App.tsx -o client/bundle.js",
+    "client-build": "deno bundle --minify --platform=browser --format=esm components/App.tsx -o client/bundle.js",
     "dev": "deno run --allow-read --allow-net --allow-write --allow-run --allow-env --watch main.tsx",
     "go": "deno task client-dev & deno task dev",
     "compile": "deno compile --allow-run --allow-write --allow-read --allow-env --allow-net --allow-ffi --include client --include components --output automated-tools main.tsx"
@@ -16,9 +16,11 @@
     "@std/path": "jsr:@std/path@1",
     "@std/path/join": "jsr:@std/path@1/join",
     "preact": "npm:preact@^10.26.6",
+
     "preact/hooks": "npm:preact@^10.26.6/hooks",
     "preact/jsx-runtime": "npm:preact@^10.26.6/jsx-runtime",
     "preact-render-to-string": "npm:preact-render-to-string@^6.5.13",
-    "open": "https://deno.land/x/open/index.ts"
+    "open": "https://deno.land/x/open/index.ts",
+    "zustand": "npm:zustand@^4.4.7"
   }
 }

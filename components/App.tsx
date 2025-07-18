@@ -1,7 +1,9 @@
 import { render } from "preact";
+import { useEffect } from "preact/hooks";
 import { Counter } from "./Counter.tsx";
 import { Files } from "./Files.tsx";
 import Status from "./Status.tsx";
+import { useStore } from "../store/useStore.ts";
 
 interface AppProps {
   counter: number;
@@ -9,10 +11,18 @@ interface AppProps {
 }
 
 export function App({ counter: initialCounter, files }: AppProps) {
+  const { setCounter, setFiles } = useStore();
+  console.log("HMR");
+  // Initialize store with server data
+  useEffect(() => {
+    setCounter(initialCounter);
+    setFiles(files);
+  }, [initialCounter, files, setCounter, setFiles]);
+
   return (
     <>
-      <h1>Hello World</h1>
-      <p>This is a t0555000</p>
+      <h1>Hello World Offline with Zustand!</h1>
+      <p>This app now uses Zustand for state management</p>
       <Counter initialCounter={initialCounter} />
       <Status />
       <Files files={files} />

@@ -1,21 +1,26 @@
 import { useEffect, useState } from "preact/hooks";
+import { useStore } from "../store/useStore.ts";
 
 const Status = () => {
-  const [status, setStatus] = useState<string[]>([]);
+  const { status, setStatus, isLoading, setIsLoading } = useStore();
   const [filename, setFilename] = useState<string>("");
   const [content, setContent] = useState<string>("");
+
   useEffect(() => {
     const handleStatus = async () => {
       try {
+        setIsLoading(true);
         const res = await fetch("/api/status");
         const data = await res.json();
         setStatus(data.status);
       } catch (error) {
         console.error("Error fetching status:", error);
+      } finally {
+        setIsLoading(false);
       }
     };
     handleStatus();
-  }, []);
+  }, [setStatus, setIsLoading]);
 
   return (
     <>
